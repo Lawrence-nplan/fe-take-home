@@ -1,4 +1,4 @@
 export interface Insight {
-  uid: string;
+  id: string;
   displayName: string;
 }

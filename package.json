@@ -4,11 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "db": "json-graphql-server db.cjs",
+    "dev": "npm run db && vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.4",
+    "graphql": "^14.7.0",
+    "json-graphql-server": "^2.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
