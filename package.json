@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "db": "json-graphql-server db.cjs",
-    "dev": "npm run db && vite",
+    "dev": "vite && npm run db",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },

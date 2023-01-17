@@ -1,17 +1,23 @@
+import { useQuery, gql } from "@apollo/client";
 import { Insight } from "../../types/Insight";
 import InsightCard from "../InsightCard";
 
-type InsightListProps = {
-  insights?: Insight[];
-};
+const InsightList = () => {
+  const { data } = useQuery<{ allInsights: Insight[] }>(gql`
+    {
+      allInsights {
+        id
+        displayName
+      }
+    }
+  `);
 
-const InsightList = ({ insights }: InsightListProps) => {
   return (
     <>
       <div className="insight-list-title">Proposed Risks</div>
       <div className="insights-list">
-        {insights &&
-          insights.map((insight) => (
+        {data?.allInsights &&
+          data.allInsights.map((insight) => (
             <InsightCard title={insight.displayName} />
           ))}
       </div>
