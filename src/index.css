@@ -35,6 +35,13 @@ body {
   font-weight: bold;
 }
 
+.insight-list-filter-sort-row {
+  width: 100%;
+  display: flex;
+  gap: 60px;
+  margin: 20px 0;
+}
+
 .insight-card {
   border-radius: 5px;
   background: rgb(241, 246, 249);

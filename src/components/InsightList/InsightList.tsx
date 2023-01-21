@@ -12,14 +12,33 @@ const InsightList = () => {
     }
   `);
 
+  const Filter = () => (
+    <div>
+      Filter: <input />
+    </div>
+  );
+
+  const Sort = () => (
+    <div>
+      Sort By:{" "}
+      <select>
+        <option value="name">Name</option>
+        <option value="plannedEndDate">Planned Start</option>
+        <option value="plannedEndDate">Planned End</option>
+      </select>
+    </div>
+  );
+
   return (
     <>
       <div className="insight-list-title">Proposed Risks</div>
+      <div className="insight-list-filter-sort-row">
+        <Filter /> <Sort />
+      </div>
       <div className="insights-list">
-        {data?.allInsights &&
-          data.allInsights.map((insight) => (
-            <InsightCard title={insight.displayName} />
-          ))}
+        {data?.allInsights?.map((insight) => (
+          <InsightCard title={insight.displayName} />
+        ))}
       </div>
     </>
   );
